@@ -13,20 +13,20 @@ $main-shadow: 0 4px 6px rgba(55,65,80,0.7);
 $hover-shadow: 0px 4px 8px rgba(45, 66, 70, 0.1);
 
 // Core colors
-$primary-color: #212529 !default;
+$primary-color: #dae1e7 !default;
 $primary-color-dark: #0f1113!default;
-$secondary-color: #d1d1e9 !default;
-$secondary-color-dark: #b3b3cb !default;
-$white: #fffffe;
-$highlight-color: #3498db;
+$secondary-color: #27496d !default;
+$secondary-color-dark: #00909e !default;
+$white: #142850;
+$highlight-color: #27496d;
 
 // Gray colors
-$dark-color: #2b2c34 !default;
-$gray-color: #d7d8e1 !default;
+$dark-color: #dae1e7 !default;
+$gray-color: #00909e !default;
 $gray-color-light: #f5f6ff !default;
-$gray-color-dark: #9b9caf !default;
+$gray-color-dark: red !default;
 
-$border-color: $gray-color-light !default;
+$border-color: $white !default;
 $border-color-dark: darken($border-color, 10%) !default;
 $border-color-light: lighten($border-color, 8%) !default;
 $bg-color: lighten($gray-color, 35%) !default;
@@ -42,7 +42,7 @@ $error: #fa5246 !default;
 $code-color: #d73e48 !default;
 $highgray-color-light: #ffe9b3 !default;
 $body-bg: $gray-color-light !default;
-$body-font-color: lighten($dark-color, 5%) !default;
+$body-font-color: $white !default;
 $link-color: $primary-color !default;
 $link-color-dark: darken($link-color, 10%) !default;
 $link-color-light: lighten($link-color, 10%) !default;

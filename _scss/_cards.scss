@@ -6,7 +6,7 @@
   position: relative;
   transition: all ease 0.3s;
   &:hover {
-    color: $highlight-color;
+    color: $white;
     -moz-transform: translateY(-4px);
     -ms-transform: translateY(-4px);
     -o-transform: translateY(-4px);
@@ -17,7 +17,7 @@
 
 .card {
   border: 1px solid $border-color;
-  background: $white;
+  background: #48586f;
   border-radius: $border-radius-lg;
   display: flex;
   flex-direction: column;
@@ -56,8 +56,8 @@
         transition: transform 0.15s ease-out;
       }
     }
-    
-  
+
+
     &:hover:before {
       transform: scale(2.15);
     }
