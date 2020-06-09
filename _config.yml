@@ -20,7 +20,7 @@
 
 title: VeDPH - events
 description:
-baseurl: "" # the subpath of your site, e.g. /support
+baseurl: /events # the subpath of your site, e.g. /support
 permalink: /:categories/:title
 
 # Let's show posts with date in the future too
