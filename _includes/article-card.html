@@ -6,7 +6,9 @@
           <div class="column col col-sm-12">
             <h5 class="text-semibold m-0">{{ post.title }}</h5>
             <p class="m-0 text-dark">{{ post.short-description }}</p>
-            <p class="text-dark text-small text-italic mb-0">{{ post.date | date: '%B %d, %Y' }}</p>
+            {% if post.date-hidden != true %}
+              <p class="text-dark text-small text-italic mb-0">{{ post.date | date: '%B %d, %Y' }}</p>
+            {% endif %}
           </div>
           <div class="column col-auto hide-sm">
           </div>
