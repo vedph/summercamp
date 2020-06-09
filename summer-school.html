@@ -1,0 +1,9 @@
+---
+layout: category
+category: summer-school
+has-subcategories: true
+---
+
+{% for post in site.categories.summer-school %}
+  {% include article-card.html %}
+{% endfor %}

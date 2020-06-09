@@ -1,0 +1,12 @@
+#This file defines all the categories you are using
+
+
+seminars:
+  name: Seminars
+  description: Seminars
+workshops:
+  name: Workshops
+  description: List of workshops
+summer-school:
+  name: Summer School
+  description: Summer school

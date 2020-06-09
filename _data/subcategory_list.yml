@@ -1,0 +1,23 @@
+#Tihs file defines all categories that live within a parent category
+
+
+summer-school-history:
+  name: History
+  parent-category: summer-school
+  parent-category-name: Summer School
+  description: Learn how to study history!
+summer-school-textual-scholarship:
+  name: Textual scholarship
+  parent-category: summer-school
+  parent-category-name: Summer School
+  description: Do you know how to combine text and school?
+summer-school-archeology:
+  name: Archeology
+  parent-category: summer-school
+  parent-category-name: Summer School
+  description: Be Indiana Jones!
+summer-school-digital-art-historian:
+  name: Digital Art Historian
+  parent-category: summer-school
+  parent-category-name: Summer School
+  description: Pixel! We just want pixel!!
