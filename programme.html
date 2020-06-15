@@ -1,0 +1,34 @@
+---
+layout: category
+category: programme
+---
+
+<div>
+<h4>Monday, 6  July</h4>
+<p>11:00-11:45 - Welcome, Opening Keynote by Elena Pierazzo [plenary, open]<br />
+followed by introductions to the individual strands
+
+afternoon: strand activities</p>
+
+<h4>Tuesday, 7 July</h4>
+<p>strand activities in the morning and in the afternoon</p>
+
+<h4>Wednesday, 8 July</h4>
+<p>strand activities in the morning and in the afternoon</p>
+
+<h4>Thursday, 9 July</h4>
+<p>strand activities in the morning and in the afternoon</p>
+
+<h4>Friday, 10 July</h4>
+<p>morning: strand activities
+15:00-15:45 - Farewell, Closing Keynote by Fabio Vitali [plenary, open]</p>
+
+<h2>Strand activies:</h2>
+
+</div>
+
+{% for post in site.categories.programme %}
+  {% if post.strand == undefined %}
+    {% include article-card.html %}
+  {% endif %}
+{% endfor %}
