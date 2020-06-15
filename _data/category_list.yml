@@ -2,11 +2,11 @@
 
 
 seminars:
-  name: Seminars
-  description: Seminars
+  name: Programme
+  description: Programme
 workshops:
-  name: Workshops
-  description: List of workshops
+  name: Speakers
+  description: List of speakers
 summer-school:
-  name: Summer School
-  description: Summer school
+  name: Futher info & contact
+  description: Futher info & contact

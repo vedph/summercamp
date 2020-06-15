@@ -5,6 +5,10 @@
   box-sizing: inherit;
 }
 
+.color a {
+  color: black;
+}
+
 html {
   box-sizing: border-box;
   font-size: $html-font-size;
@@ -38,5 +42,5 @@ a {
 }
 
 .help_button {
-  color: $white;  
+  color: $white;
 }
