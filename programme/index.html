@@ -27,8 +27,8 @@ afternoon: strand activities</p>
 
 </div>
 
-{% for post in site.categories.programme %}
-  {% if post.strand == undefined %}
-    {% include article-card.html %}
+{% for p in site.pages %}
+  {% if p.subcategory == "programme" %}
+    {% include card.html %}
   {% endif %}
 {% endfor %}
