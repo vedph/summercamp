@@ -18,9 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: VeDPH - events
+title: VeDPH - Summer Camp
 description:
-baseurl: /events # the subpath of your site, e.g. /support
+baseurl: /summercamp # the subpath of your site, e.g. /support
 permalink: /:categories/:title
 
 # Let's show posts with date in the future too
@@ -29,7 +29,7 @@ future: true
 brand_logo: logo.png
 brand_name: VeDPH
 header: Venice Centre of Digital and Public Humanities
-subheader: Materials and information about events organised by VeDPH
+subheader: Materials and information about the summer camp organised by VeDPH
 
 # Social Links
 twitter_username: venicedph
