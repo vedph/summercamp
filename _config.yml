@@ -46,12 +46,12 @@ nav_button_link: https://www.unive.it/vedph
 
 # More Help
 help_one_title: Where to find materials
-help_one_content: events material
-help_one_button: Github
+help_one_content: Teaching materials of open lectures and workshops
+help_one_button: VeDH GitHub repository
 help_one_link: https://github.com/vedph/event_materials/tree/master/2020_summer_camp
 
 help_two_title: Twitter
-help_two_content: Feel free to tweet at me if you have suggestions.
+help_two_content: Feel free to tweet at us if you have suggestions.
 help_two_link: https://twitter.com/vedph
 
 # Build settings
