@@ -44,16 +44,7 @@ instagram_username:
 nav_button: VeDPH website
 nav_button_link: https://www.unive.it/vedph
 
-# More Help
-help_one_title: Where to find materials
-help_one_content: events material
-help_one_button: Github
-help_one_link: https://github.com/vedph
-
-help_two_title: Twitter
-help_two_content: Feel free to tweet at me if you have suggestions.
-help_two_link: https://twitter.com/vedph
-
+main_categories: [ programme, speakers, infocontacts ]
 # Build settings
 theme: minima
 plugins:

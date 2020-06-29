@@ -4,8 +4,6 @@ layout: default
 
 {% include header.html %}
 
-{% assign page_category = site.data.category_list[page.category] %}
-
 <div class="container-full">
     <div class="container grid-xl">
       <div class="mt-12 show-md"></div>
@@ -17,7 +15,13 @@ layout: default
               <a href="{{ site.baseurl }}/">Home</a>
             </li>
             <li class="breadcrumb-item">
-              <a href="../{{ page.category }}">{{ page_category.name }}</a>
+              <a href="{{site.baseurl}}/{{ page.category }}">
+                {% for p in site.pages %}
+                  {% if p.category == page.category and p.subcategory == undefined %}
+                    {{ p.title }}
+                  {% endif %}
+                {% endfor %}
+              </a>
             </li>
             <li class="breadcrumb-item">
               <a href="#">{{ page.title }}</a>

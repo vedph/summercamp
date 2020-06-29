@@ -1,0 +1,11 @@
+---
+layout: category
+category: materials
+title: Materials
+---
+
+{% for p in site.pages %}
+  {% if p.subcategory == "materials" %}
+    {% include card.html %}
+  {% endif %}
+{% endfor %}
