@@ -45,6 +45,7 @@ nav_button: VeDPH website
 nav_button_link: https://www.unive.it/vedph
 
 main_categories: [ programme, speakers, infocontacts ]
+
 # Build settings
 theme: minima
 plugins:
