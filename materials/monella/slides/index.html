@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - Markdown Example</title>
+
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+        <link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                <!-- Slides are separated by three dashes (quick 'n dirty regular expression) -->
+                <section data-markdown data-separator="
+---
+" data-separator-vertical="--">
+
+<script type="text/template">
+## Linking Text and image:<br/> TEI XML and IIIF
+
+Paolo Monella
+
+![IIIF logo from Wikimedia Commons](assets/iiif2020/img/International_Image_Interoperability_Framework_logo.png)
+
+_VeDPH Summer Camp 2020_,
+Strand 1 (Text)
+<br/>
+Thursday, 9 July 2020
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; float: right" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+
+---
+
+## What is IIIF?
+
+[IIIF](https://iiif.io/) is a protocol
+<br/>
+(a language shared between computers)
+<br/>
+to serve images with medatata.
+
+![IIIF logo from Wikimedia Commons](assets/iiif2020/img/International_Image_Interoperability_Framework_logo.png)
+
+---
+
+## Why IIIF?
+
+Images stay on their server
+<br/>
+(e.g. the Ambrosiana Library)
+
+and may be integrated
+<br/>
+(e.g. in "distributed" editions)
+
+---
+
+## What does IIIF do?
+
+<table>
+
+<tr>
+<th></th>
+<th>Presentation API</th>
+<th>Image API</th>
+</tr>
+
+<tr>
+<td>Purpose</td>
+<td>Collection of images </td>
+<td>One <em>canvas</em>/surface </td>
+</tr>
+
+<tr>
+<td>E.g.:</td>
+<td>A manuscript</td>
+<td>A MS page</td>
+</tr>
+
+<tr>
+<td>Metadata file</td>
+<td>Manifest (JSON)</td>
+<td>JSON</td>
+</tr>
+
+<tr>
+<td>Documentation</td>
+<td><a href="https://iiif.io/api/presentation/2.1/">Vers. 2.1</a></td>
+<td><a href="https://iiif.io/api/image/2.1/">Vers. 2.1</a></td>
+</tr>
+
+</table>
+
+---
+
+## JSON metadata files
+
+--
+
+## JSON metadata files
+### Manifest
+
+- Presentation API → collection (MS)
+- https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json
+    - `sequences/0/canvases/26/@id` ↓
+
+--
+
+## JSON metadata files
+### Canvas JSON file
+
+- Image API → canvas (surface)
+- https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json
+    - `images/0/resource/@id` ↓:
+
+--
+
+## JSON metadata files
+### Image JSON file
+
+- Image API → canvas (surface) → image (specific photo of that surface)
+- one canvas can point to many images, e.g.:
+    - new photos of same MS
+    - new photos taken after MS restoration
+    - photos with radiant light, IR or UV
+- [https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**info.json**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json)
+
+--
+
+## JSON metadata files
+### Metadata → image file
+
+- Image JSON file, **metadata**:
+    - [https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**info.json**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json)
+    - `/info.json` at the end
+- Image **file** served _ad hoc_ (full image):
+    - [https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**full/full/0/default**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default)
+
+--
+
+## JSON metadata files
+
+- Manifest: https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json
+- Canvas: [https://iiif.bodleian.ox.ac.uk/iiif/**canvas**/699adfb3-a5da-4b09-9759-41eee3713bc3.json](https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json)
+- Image: [https://iiif.bodleian.ox.ac.uk/iiif/**image**/699adfb3-a5da-4b09-9759-41eee3713bc3/**info.json**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json)
+- Image **file**: [https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**full/full/0/default**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default)
+
+---
+
+## Image API
+
+- Resizing, cropping etc. happens on the server
+- I can ask for a specific size, region etc. of an image through an URL
+- the server creates an _ad hoc_ image and only returns that
+
+--
+
+## Image API
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**full**/full/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default)
+![Full width image](assets/iiif2020/img/default_smaller.jpeg)
+
+--
+
+## Image API
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**500,3550,3000,140**/full/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default)
+![Cropped 1st line](assets/iiif2020/img/1st_line.jpeg)
+
+
+---
+
+## Image API
+### Let\'s manipulate an image
+
+- Full image
+- resizing (size)
+- cropping (region)
+- quality (color, gray...)
+- rotation
+
+---
+
+## Full image
+
+--
+
+## Full image
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**full/full/0/default**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default)
+
+---
+
+## File formats
+
+--
+
+## File formats
+
+Full image with file extension at the end (**.jpg**):
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default**.jpg**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default.jpg)
+
+--
+
+## File formats
+
+...with file extension at the end (**.jp2**):
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default**.jp2**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default.jp2)
+
+--
+
+## File formats
+
+The server has no copy of this image in **.png** format, so this returns an error:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default**.png**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default.png)
+
+--
+
+## File formats
+
+...with file extension **before**:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3**.jp2**/full/full/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3.jp2/full/full/0/default)
+
+---
+
+## Cropping
+
+--
+
+## Cropping
+
+Full image, no cropping:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**full**/full/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default)
+
+--
+
+## Cropping
+
+Illuminated initial:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**230,3650,980,1120**/full/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/0/default)
+
+--
+
+## Cropping
+
+![Cropping](assets/iiif2020/img/crop.png)
+
+--
+
+## Cropping
+
+Panoramic view of the city of Venice:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**510,550,3580,3200**/full/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/510,550,3580,3200/full/0/default)
+
+--
+
+## Cropping
+
+First line of the rubric (*Ci commence li livres du graunt Caam qui parole de la graunt Ermenie de Perſſe*):
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**500,3550,3000,140**/full/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default)
+
+--
+
+## Cropping
+
+Second line of the rubric (*et deſ tartars et dŷnde. Et des granz merveille. qui ꝑ le monde ſont*):
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**530,3670,2400,140**/full/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/530,3670,2400,140/full/0/default)
+
+--
+
+## Cropping
+
+See paragraph [Region](https://iiif.io/api/image/2.1/#region) in the API documentation
+
+---
+
+## Resizing
+
+--
+
+## Resizing
+
+Full size, no resizing:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/**full**/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default)
+
+--
+
+## Resizing
+
+Squeeze to 50 (width) x 600 (heigth):
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/**50,600**/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/50,600/0/default)
+
+![Resizing](assets/iiif2020/img/size.png)
+
+--
+
+## Resizing
+
+Width 600 px:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/**50,**/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/50,/0/default)
+
+![Resizing](assets/iiif2020/img/size.png)
+
+--
+
+## Resizing
+
+Height 600 px:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/**,600**/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/,600/0/default)
+
+![Resizing](assets/iiif2020/img/size.png)
+
+--
+
+## Resizing
+
+See paragraph [Size](https://iiif.io/api/image/2.1/#size) in the API documentation
+
+![Resizing](assets/iiif2020/img/size.png)
+
+---
+
+## Rotation
+
+--
+
+## Rotation
+
+No rotation (0°):
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/**0**/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/0/default)
+
+--
+
+## Rotation
+
+Rotate 90°:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/**90**/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/90/default)
+
+--
+
+## Rotation
+
+Rotation is allowed only for multiples of 90° in this IIIF server, so 45° returns an error:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/**45**/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/45/default)
+
+--
+
+## Rotation
+
+Mirroring (with exclamation mark!):
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/**!0**/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/!0/default)
+
+---
+
+## Quality
+
+--
+
+## Quality
+
+Default:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/0/**default**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/0/default)
+
+--
+
+## Quality
+
+Color (same as 'default'):
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/0/**color**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/0/color)
+
+--
+
+## Quality
+
+Gray:
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/0/**gray**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/0/gray)
+
+--
+
+## Quality
+
+Bitonal (black and white):
+
+[https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/0/**bitonal**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/230,3650,980,1120/full/0/bitonal)
+
+--
+
+## Quality
+
+See paragraph [Quality](https://iiif.io/api/image/2.1/#quality) in the API documentation
+
+---
+
+## Let\'s link our TEI digital edition to an image
+
+1. TEI → _local_ image
+2. TEI → _IIIF_ image
+
+---
+
+## TEI → Local image
+### Encoding
+
+--
+
+## TEI → Local image
+### Encoding
+
+1. Download image [218r.jpg](assets/iiif2020/img/218r.jpg) to your local folder
+2. Write this in your TEI code:
+
+            <pb n="218r" facs="218r.jpg"/>
+
+
+---
+
+## TEI → Local image
+### Visualization
+
+--
+
+## TEI → Local image
+### Visualization
+
+Let\'s use [OxGarage](https://oxgarage.tei-c.org/#) to convert TEI XML to HTML.
+
+Instructions:
+
+↓
+
+--
+
+1. Go to [OxGarage](https://oxgarage.tei-c.org/#)
+
+![OxGarage](assets/iiif2020/img/ox00.png)
+
+--
+
+2. Left: Convert from → Documents → TEI P5 XML Document
+
+--
+
+![Convert from](assets/iiif2020/img/ox01.png)
+
+--
+
+![Convert from](assets/iiif2020/img/ox02.png)
+
+--
+
+3. Right: Convert to → xHTML
+
+--
+
+
+![Convert to](assets/iiif2020/img/ox03.png)
+
+--
+
+4. Left: Select file to convert → Button *Browse* →
+    select and upload your TEI XML file
+5. Right: Upload images → Button *Browse* → select and
+    upload the image with the manuscript page facsimile
+    [218r.jpg](assets/iiif2020/img/218r.jpg)
+
+--
+
+![Browse](assets/iiif2020/img/ox04.png)
+
+--
+
+6. Bottom, center: click on button *Convert*
+7. In a few seconds, a download dialog window appears → click
+    *Save* to save the output HTML file
+8. Open the downloaded HTML file to see the result
+    (double click; your default browser will open it)
+
+---
+
+## TEI → IIIF image
+### Manifest
+
+Linking \<msDesc/\> (MS description, in the TEI header)
+to a whole IIIF JSON **manifest** (metadata about all images of a MS):
+
+    <sourceDesc>
+        <msDesc facs="https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json">
+            <msIdentifier>
+                <settlement>Oxford</settlement>
+                <repository>Bodleian Library</repository>
+                <idno>MS. Bodl. 264</idno>
+            </msIdentifier>
+        [etc.]
+        </msDesc>
+    </sourceDesc>
+
+
+---
+
+## TEI → IIIF image
+### Page
+
+Linking \<pb/\>
+to a **canvas** JSON:
+
+    <pb n="218r" facs="https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json"/>
+
+--
+
+## TEI → IIIF image
+### Page
+
+Linking \<pb/\>
+to an **image** JSON:
+
+    <pb n="218r" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json"/>
+
+--
+
+## TEI → IIIF image
+### Page
+
+Linking \<pb/\>
+to a **image file** (full image):
+
+    <pb n="218r" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default.jpg"/>
+
+---
+
+## TEI → IIIF image
+### Line
+
+Linking \<lb/\>
+to a **region** of an image file.
+
+First line of the rubric (*Ci commence li livres du Grant Caam*...):
+
+    <lb n="218r.1" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default"/>
+
+--
+
+## TEI → IIIF image
+### Line
+
+...second line of the rubric (*et deſ tartars et dŷnde*...):
+
+    <lb n="218r.2" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/530,3670,2400,140/full/0/default"/>
+
+---
+
+## TEI → IIIF image
+### Graphic element
+
+    <figure>
+        <head>View of Venice</head>
+        <figDesc>Illumination: view of the city of Venice</figDesc>
+        <graphic url="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/510,550,3580,3200/full/0/default"/>
+    </figure>
+
+---
+
+## Learning materials and contacts
+
+1. DARTH, [Hacking Mirador 2016](http://darthcrimson.org/hacking-mirador/)
+1. Paolo Monella, [Bologna 2019](https://www1.unipa.it/paolo.monella/reires2019/index.html)
+1. Tiziana Mancinelli, [Bologna 2020](https://slides.com/tizmancinelli/documenta-amoris#/)
+1. Paolo Monella and Roberto Rosselli Del Turco, [AIUCD 2020](https://www1.unipa.it/paolo.monella/aiucd2020/index.html)
+1. VeDPH Summer camp 2020, [main page](https://vedph.github.io/summercamp/)
+1. Paolo Monella, [contacts](http://www1.unipa.it/paolo.monella/indice/index.html)
+
+                    </script>
+                </section>
+
+            </div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+		</script>
+
+	</body>
+</html>
