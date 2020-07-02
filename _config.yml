@@ -44,7 +44,7 @@ instagram_username:
 nav_button: VeDPH website
 nav_button_link: https://www.unive.it/vedph
 
-main_categories: [ programme, speakers, materials, infocontacts ]
+main_categories: [ programme, speakers, videos, materials, infocontacts ]
 
 # Build settings
 theme: minima
