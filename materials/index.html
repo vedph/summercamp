@@ -7,30 +7,10 @@ title: Materials & tools
 <h2>Strand 1: Digital Textual Scholarship</h2>
 
 {% for p in site.pages reversed %}
-  {% if p.subcategory == "materials" %}
+  {% if p.subcategory == "materials strand1" %}
     {% include card.html %}
   {% endif %}
 {% endfor %}
-
-<ul>
-    <li>F. Boschetti, A. M. Del Grosso,
-        <em>Textual markup (typographic, structural, semantic: HTML, CSS, XML)</em>:
-        <ul>
-            <li><a href="https://github.com/vedph/event_materials/tree/master/2020_summer_camp/strand_1_text/html">
-                    Materials folder</a> in GitHub</li>
-        </ul>
-    </li>
-    P. Monella, 
-    <em>Linking Text and image: TEI XML and IIIF</em>:
-    Slides
-    {{site.baseurl}}/materials/monella/slides/index.html
-    Workshop plan
-    {{site.baseurl}}/materials/monella/plan.html
-    GitHub folder
-    https://github.com/vedph/event_materials/tree/master/2020_summer_camp/strand_1_text/iiif
-</ul>
-
-
 
 <!--h2>Strand 2: Digital and Public History</h2>
 
