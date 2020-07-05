@@ -17,7 +17,13 @@
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
-        <link rel="stylesheet" href="plugin/highlight/monokai.css">
+        <link rel="stylesheet" href="plugin/highlight/zenburn.css">
+        <script src="plugin/highlight/highlight.js"></script>
+            <script>
+                  Reveal.initialize({
+                          plugins: [ RevealHighlight ]
+                        });
+            </script>
 	</head>
 
 	<body>
@@ -68,9 +74,21 @@ and may be integrated
 
 ---
 
-## Let's view a manuscript with IIIF
+## View a manuscript with IIIF
 
-### Canvas ← Image(s)
+Bodleian Library MS. Bodl. 264: _Mirador Viewer_
+
+https://iiif.bodleian.ox.ac.uk/iiif/mirador/2d7945ce-b71e-41c6-ad1f-8af6b92f020f
+
+↓
+
+- go to _fol. 218r_ from thumbnails below
+- or to _Li Livres du Graunt Caam_ from menu left
+- other viewers ([1](https://digital.bodleian.ox.ac.uk/inquire/Discover/Search/#/?p=c+11,t+,rsrs+0,rsps+10,fa+,so+ox%3Asort%5Easc,scids+,pid+ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c,vi+699adfb3-a5da-4b09-9759-41eee3713bc3); [2](https://iiif.bodleian.ox.ac.uk/iiif/viewer/2d7945ce-b71e-41c6-ad1f-8af6b92f020f#?c=0&m=0&s=0&cv=456&r=0&xywh=-3992%2C0%2C13323%2C6816))
+
+---
+
+## Canvas ← Image(s)
 
 E.g.: a MS page
 
@@ -80,7 +98,7 @@ Source: Jason Ronallo, [Workshop: Shared Canvas](https://ronallo.com/iiif-worksh
 
 --
 
-### Canvas ← Image(s)
+## Canvas ← Image(s)
 
 - One canvas may include many images, e.g.:
     - new photos of same MS
@@ -88,7 +106,7 @@ Source: Jason Ronallo, [Workshop: Shared Canvas](https://ronallo.com/iiif-worksh
     - photos with radiant light, IR or UV
 --
 
-### Canvas ← Image(s)
+## Canvas ← Image(s)
 
 E.g.: a MS page
 
@@ -98,7 +116,7 @@ Source: Jason Ronallo, [Workshop: Shared Canvas](https://ronallo.com/iiif-worksh
 
 ---
 
-### Collection
+## Collection
 
 E.g.: a whole MS
 
@@ -226,16 +244,19 @@ Source: Jason Ronallo, [Workshop: Shared Canvas](https://ronallo.com/iiif-worksh
 
 ## Image API
 
+Full image:
 [https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**full**/full/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default)
+
 ![Full width image](assets/iiif2020/img/default_smaller.jpeg)
 
 --
 
 ## Image API
 
+Cropped region:
 [https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**500,3550,3000,140**/full/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default)
-![Cropped 1st line](assets/iiif2020/img/1st_line.jpeg)
 
+![Cropped 1st line](assets/iiif2020/img/1st_line.jpeg)
 
 ---
 
@@ -498,8 +519,9 @@ See paragraph [Quality](https://iiif.io/api/image/2.1/#quality) in the API docum
 1. Download image [218r.jpg](assets/iiif2020/img/218r.jpg) to your local folder
 2. Write this in your TEI code:
 
-            <pb n="218r" facs="218r.jpg"/>
-
+```
+<pb facs="218r.jpg" n="218r"/>
+```
 
 ---
 
@@ -570,19 +592,16 @@ Instructions:
 ### Manifest
 
 Linking \<msDesc/\> (MS description, in the TEI header)
-to a whole IIIF JSON **manifest** (metadata about all images of a MS):
+to a whole IIIF JSON **manifest** (metadata about collection of all images of a MS):
 
-    <sourceDesc>
-        <msDesc facs="https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json">
-            <msIdentifier>
-                <settlement>Oxford</settlement>
-                <repository>Bodleian Library</repository>
-                <idno>MS. Bodl. 264</idno>
-            </msIdentifier>
-        [etc.]
-        </msDesc>
-    </sourceDesc>
-
+<pre><code data-line-numbers="2"><sourceDesc>
+	<msDesc facs="https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json">
+		<msIdentifier>
+			<settlement>Oxford</settlement>
+			<repository>Bodleian Library</repository>
+			<idno>MS. Bodl. 264</idno>
+    			[etc.]
+</code></pre>
 
 ---
 
@@ -592,7 +611,9 @@ to a whole IIIF JSON **manifest** (metadata about all images of a MS):
 Linking \<pb/\>
 to a **canvas** JSON:
 
-    <pb n="218r" facs="https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json"/>
+```
+<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json" n="218r"/>
+```
 
 --
 
@@ -602,7 +623,9 @@ to a **canvas** JSON:
 Linking \<pb/\>
 to an **image** JSON:
 
-    <pb n="218r" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json"/>
+```
+<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json" n="218r"/>
+```
 
 --
 
@@ -612,7 +635,9 @@ to an **image** JSON:
 Linking \<pb/\>
 to a **image file** (full image):
 
-    <pb n="218r" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default.jpg"/>
+```
+<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default.jpg" n="218r"/>
+```
 
 ---
 
@@ -624,7 +649,9 @@ to a **region** of an image file.
 
 First line of the rubric (*Ci commence li livres du Grant Caam*...):
 
-    <lb n="218r.1" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default"/>
+```
+<lb n="218r.1" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default"/>
+```
 
 --
 
@@ -633,18 +660,20 @@ First line of the rubric (*Ci commence li livres du Grant Caam*...):
 
 ...second line of the rubric (*et deſ tartars et dŷnde*...):
 
-    <lb n="218r.2" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/530,3670,2400,140/full/0/default"/>
+```
+<lb n="218r.2" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/530,3670,2400,140/full/0/default"/>
+```
 
 ---
 
 ## TEI → IIIF image
 ### Graphic element
 
-    <figure>
-        <head>View of Venice</head>
-        <figDesc>Illumination: view of the city of Venice</figDesc>
-        <graphic url="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/510,550,3580,3200/full/0/default"/>
-    </figure>
+<figure>
+    <head>View of Venice</head>
+    <figDesc>Illumination: view of the city of Venice</figDesc>
+    <graphic url="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/510,550,3580,3200/full/0/default"/>
+</figure>
 
 ---
 
