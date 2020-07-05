@@ -17,13 +17,8 @@
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
-        <link rel="stylesheet" href="plugin/highlight/zenburn.css">
-        <script src="plugin/highlight/highlight.js"></script>
-            <script>
-                  Reveal.initialize({
-                          plugins: [ RevealHighlight ]
-                        });
-            </script>
+        <link rel="stylesheet" href="plugin/highlight/monokai.css">
+        <script src="plugin/highlight/highlight.js">case_insensitive: false;</script>
 	</head>
 
 	<body>
@@ -594,14 +589,7 @@ Instructions:
 Linking \<msDesc/\> (MS description, in the TEI header)
 to a whole IIIF JSON **manifest** (metadata about collection of all images of a MS):
 
-<pre><code data-line-numbers="2"><sourceDesc>
-	<msDesc facs="https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json">
-		<msIdentifier>
-			<settlement>Oxford</settlement>
-			<repository>Bodleian Library</repository>
-			<idno>MS. Bodl. 264</idno>
-    			[etc.]
-</code></pre>
+`<msDesc facs="https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json">`
 
 ---
 
