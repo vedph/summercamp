@@ -14,6 +14,12 @@ title: Materials, slides & tools
 
 <!--h2>Strand #2 - Digital and Public History</h2>
 
-<h2>Strand #3 - Digital and Public Art History</h2>
+<h2>Strand #3 - Digital and Public Art History</h2-->
 
-<h2>Strand #4 - Digital Archaeology and its Public</h2-->
+<h2>Strand #4 - Digital Archaeology and its Public</h2>
+
+{% for p in site.pages reversed %}
+  {% if p.subcategory == "materials strand4" %}
+    {% include card.html %}
+  {% endif %}
+{% endfor %}
