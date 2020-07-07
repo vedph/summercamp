@@ -34,8 +34,137 @@
 
 <script type="text/template">
 
-
 <img alt="Linking Text and image: TEI XML and IIIF" src="assets/iiif2020/img/cover.png"/>
+
+---
+
+## Linking Text and image
+
+<img src="assets/iiif2020/img/EVT1.png" alt="EVT"/>
+
+---
+
+## Linking text and image
+
+Let\'s link our TEI digital edition to a **local** image
+
+---
+
+## TEI → Local image
+### Encoding
+
+--
+
+## TEI → Local image
+### Encoding
+
+1. Download image [218r.jpg](assets/iiif2020/img/218r.jpg) to your local folder (the same in which you have your TEI XML file)
+2. Write this in your TEI code:
+
+```
+<pb facs="218r.jpg" n="218r"/>
+```
+
+---
+
+## TEI → Local image
+### Visualization
+
+--
+
+## TEI → Local image
+### Visualization
+
+EVT - Edition Visualization Technology
+
+<img src="assets/iiif2020/img/EVT1.png" alt="EVT" height="250"/>
+
+http://evt.labcd.unipi.it/
+
+--
+
+## TEI → Local image
+### Visualization
+
+We don't have time here to install and configure EVT.
+
+Let\'s use [OxGarage](https://oxgarage.tei-c.org/#) instead to convert TEI XML to HTML.
+
+Instructions:
+
+↓
+
+--
+
+1. Go to [OxGarage](https://oxgarage.tei-c.org/#)
+
+![OxGarage](assets/iiif2020/img/ox00.png)
+
+--
+
+2. Left: Convert from → Documents → TEI P5 XML Document
+
+--
+
+![Convert from](assets/iiif2020/img/ox01.png)
+
+--
+
+![Convert from](assets/iiif2020/img/ox02.png)
+
+--
+
+3. Right: Convert to → xHTML
+
+--
+
+![Convert to](assets/iiif2020/img/ox03.png)
+
+--
+
+4. Left: Select file to convert → Button *Browse* →
+    select and upload your TEI XML file
+5. Right: Upload images → Button *Browse* → select and
+    upload the image with the manuscript page facsimile
+    [218r.jpg](assets/iiif2020/img/218r.jpg)
+
+--
+
+![Browse](assets/iiif2020/img/ox04.png)
+
+--
+
+6. Bottom, center: click on button *Convert*
+7. In a few seconds, a download dialog window appears → click
+    *Save* to save the output HTML file
+8. Open the downloaded HTML file to see the result:
+    double click; your default browser will open it;
+    `[Page 218r]` should now be a link to the image file
+
+---
+
+## Issue: permission from libraries
+
+<ul>
+<li>Libraries claim copyright over photos of MS pages
+        <ul>
+        <li>written 1000 years ago</li>
+        <li>with texts composed 2000 years ago</li>
+        </ul>
+        </li>
+</ul>
+
+---
+
+## Solution: IIIF
+
+Images stay on their server
+<br/>
+(e.g. the Ambrosiana Library)
+
+and may be integrated
+<br/>
+(e.g. in "distributed" editions)
 
 ---
 
@@ -54,18 +183,6 @@ to serve images with medatata.
 ## What does IIIF stand for?
 
 International Image Interoperability Framework
-
----
-
-## Why IIIF?
-
-Images stay on their server
-<br/>
-(e.g. the Ambrosiana Library)
-
-and may be integrated
-<br/>
-(e.g. in "distributed" editions)
 
 ---
 
@@ -178,8 +295,16 @@ Source: Jason Ronallo, [Workshop: Shared Canvas](https://ronallo.com/iiif-worksh
 ## JSON metadata files
 ### Image JSON file
 
-- _Canvas_: a MS page
 - [https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**info.json**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json)
+
+--
+
+## JSON metadata files
+
+- Manifest: https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json
+- Canvas: [https://iiif.bodleian.ox.ac.uk/iiif/**canvas**/699adfb3-a5da-4b09-9759-41eee3713bc3.json](https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json)
+- Image: [https://iiif.bodleian.ox.ac.uk/iiif/**image**/699adfb3-a5da-4b09-9759-41eee3713bc3/**info.json**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json)
+- Image **file**: [https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**full/full/0/default**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default)
 
 --
 
@@ -218,24 +343,7 @@ Source: Jason Ronallo, [Workshop: Shared Canvas](https://ronallo.com/iiif-worksh
 
 </table>
 
---
-
-## JSON metadata files
-
-- Manifest: https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json
-- Canvas: [https://iiif.bodleian.ox.ac.uk/iiif/**canvas**/699adfb3-a5da-4b09-9759-41eee3713bc3.json](https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json)
-- Image: [https://iiif.bodleian.ox.ac.uk/iiif/**image**/699adfb3-a5da-4b09-9759-41eee3713bc3/**info.json**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json)
-- Image **file**: [https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**full/full/0/default**](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default)
-
 ---
-
-## Image API
-
-- Resizing, cropping etc. happens on the server
-- I can ask for a specific size, region etc. of an image through an URL
-- the server creates an _ad hoc_ image and only returns that
-
---
 
 ## Image API
 
@@ -252,6 +360,14 @@ Cropped region:
 [https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**500,3550,3000,140**/full/0/default](https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default)
 
 ![Cropped 1st line](assets/iiif2020/img/1st_line.jpeg)
+
+--
+
+## Image API
+
+- Resizing, cropping etc. happens on the server
+- I can ask for a specific size, region etc. of an image through an URL
+- the server creates an _ad hoc_ image and only returns that
 
 ---
 
@@ -496,90 +612,8 @@ See paragraph [Quality](https://iiif.io/api/image/2.1/#quality) in the API docum
 
 ---
 
-## Let\'s link our TEI digital edition to an image
-
 1. TEI → _local_ image
 2. TEI → _IIIF_ image
-
----
-
-## TEI → Local image
-### Encoding
-
---
-
-## TEI → Local image
-### Encoding
-
-1. Download image [218r.jpg](assets/iiif2020/img/218r.jpg) to your local folder
-2. Write this in your TEI code:
-
-```
-<pb facs="218r.jpg" n="218r"/>
-```
-
----
-
-## TEI → Local image
-### Visualization
-
---
-
-## TEI → Local image
-### Visualization
-
-Let\'s use [OxGarage](https://oxgarage.tei-c.org/#) to convert TEI XML to HTML.
-
-Instructions:
-
-↓
-
---
-
-1. Go to [OxGarage](https://oxgarage.tei-c.org/#)
-
-![OxGarage](assets/iiif2020/img/ox00.png)
-
---
-
-2. Left: Convert from → Documents → TEI P5 XML Document
-
---
-
-![Convert from](assets/iiif2020/img/ox01.png)
-
---
-
-![Convert from](assets/iiif2020/img/ox02.png)
-
---
-
-3. Right: Convert to → xHTML
-
---
-
-
-![Convert to](assets/iiif2020/img/ox03.png)
-
---
-
-4. Left: Select file to convert → Button *Browse* →
-    select and upload your TEI XML file
-5. Right: Upload images → Button *Browse* → select and
-    upload the image with the manuscript page facsimile
-    [218r.jpg](assets/iiif2020/img/218r.jpg)
-
---
-
-![Browse](assets/iiif2020/img/ox04.png)
-
---
-
-6. Bottom, center: click on button *Convert*
-7. In a few seconds, a download dialog window appears → click
-    *Save* to save the output HTML file
-8. Open the downloaded HTML file to see the result
-    (double click; your default browser will open it)
 
 ---
 
