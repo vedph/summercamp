@@ -699,6 +699,95 @@ to a **region** of an image file, first line of the rubric (*Ci commence li livr
 
 ---
 
+## Exercise
+
+Find the IIIF URL for the 2nd page of the MS (218v) in the IIIF JSON metadata files (starting from the manifest) and connect it to &lt;pb n="218v"/&gt; in the TEI XML code of your digital edition. Instructions:
+
+↓
+
+--
+
+1. Go to the <a href="https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json" target="_blank">Bodleian MS manifest</a>
+	- _Hint_: Click on the triangles on the left to open the section
+
+--
+
+2. In the JSON code of the <a href="https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json" target="_blank">manifest</a>, browse to: `sequences/0/canvases/27/@id`
+	- _What's this?_ Canvas n. 27 corresponds to page 218v
+3. Click on the URI in that @id
+	- _Hint_: it starts with `https://iiif.bodleian.ox.ac.uk/iiif/canvas` and ends with `fdbe9.json`
+	- _What's this?_ It's the URI of the JSON metadata file of the **canvas** of page 218v
+
+--
+
+4. In the JSON metadata file of the canvas you just opened, browse to `images/0/@id`
+5. Click on the URI in that @id
+	- _Hint_: it starts with `https://iiif.bodleian.ox.ac.uk/iiif/annotation` and ends with `fdbe9.json`
+	- _What's this?_ It is the URI of the JSON metadata file of an **annotation** to that canvas (an annotation including an image)
+
+--
+
+6. In the JSON metadata file of the annotation you just opened, browse to `resource/@id`
+7. Click on the URI in that @id
+	- _Hint_: it starts with `https://iiif.bodleian.ox.ac.uk/iiif/image` and ends with `fdbe9.json`
+	- _What's this?_  It's the URI of the JSON metadata file of that **image/photo**
+
+--
+
+6. _Solution_: you should have just clicked on
+<a href="https://iiif.bodleian.ox.ac.uk/iiif/image/497d8383-1580-419b-91bf-20452f3fdbe9/info.json" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/image/497d8383-1580-419b-91bf-20452f3fdbe9/info.json</a>
+	- (if not, just click on the link above)
+	- _Hint_: The photo should show a MS page starting with _dout ſans_
+	- _No worries_: I got lost myself the first time I tried this. Let's continue!
+
+↓
+
+--
+
+7. Edit the URI
+<a href="https://iiif.bodleian.ox.ac.uk/iiif/annotation/497d8383-1580-419b-91bf-20452f3fdbe9.json" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/annotation/497d8383-1580-419b-91bf-20452f3fdbe9.json</a>
+directly in your browser's address bar
+so that you get the **image file** URI
+	- _Hint_: remove `.json` and replace it with `/full/full/0/default`
+8. Once you have the new URI, hit 'enter' in the address bar of your browser to view the image
+	- _What's this?_  It's the URI of the actual **image** data. Great job!
+
+--
+
+10. Locate the &lt;pb&gt; element for page 218v in your digital edition's TEI XML
+	- _Hint_: it's around line 101. Find this in your code:
+
+<div style="text-align: left; font-size: 60%; margin-left: 10em">
+
+`<div type="chapter" n="1">`
+
+`	<pb n="218v"/>`
+
+`        <cb n="a"/>`
+
+`        <head rend="rubricated">`
+
+`            <lb n="1"/>Ci dit le p<ex>re</ex>mier chapitre. Comment les .ij.`
+</div>
+
+--
+
+9. Copy/paste the image URI as value of a @facs attribute in a &lt;pb&gt; element in your 
+	- _Hint_: the result should look like `<pb facs="https://iiif.bodleian.ox.ac.uk/bla-bla-bla/full/full/0/default" n="218v"/>`
+	- Go to next slide ↓ for the solution
+
+--
+
+10. _Solution_: `<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/497d8383-1580-419b-91bf-20452f3fdbe9/full/full/0/default" n="218v"/>`
+
+--
+
+11. Hurray! Victory is ours!
+
+![Victory](assets/iiif2020/img/victory.jpg)
+
+---
+
 ## Learning materials and contacts
 
 1. DARTH, <a href="http://darthcrimson.org/hacking-mirador/" target="_blank">Hacking Mirador 2016</a>
