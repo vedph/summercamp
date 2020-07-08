@@ -61,9 +61,18 @@ Let\'s link our TEI digital edition to a **local** image
 1. Download image [218r.jpg](assets/iiif2020/img/218r.jpg) to your local folder (the same in which you have your TEI XML file)
 2. Write this in your TEI code:
 
-```
-<pb facs="218r.jpg" n="218r"/>
-```
+`<pb facs="218r.jpg" n="218r"/>`
+
+--
+
+## TEI → Local image
+### Encoding
+
+1. Do the same for the second page
+1. Download image [218v.jpg](assets/iiif2020/img/218v.jpg) to your local folder (the same in which you have your TEI XML file)
+2. Write this in your TEI code:
+
+`<pb facs="218v.jpg" n="218v"/>`
 
 ---
 
@@ -314,8 +323,8 @@ Source: Jason Ronallo, [Workshop: Shared Canvas](https://ronallo.com/iiif-worksh
 <table>
 
 <tr>
-<th>Image metadata file</th>
-<th>Actual image file</th>
+<th>Image metadata file URL</th>
+<th>Actual image file URL</th>
 </tr>
 
 <tr>
@@ -612,8 +621,9 @@ See paragraph [Quality](https://iiif.io/api/image/2.1/#quality) in the API docum
 
 ---
 
-1. TEI → _local_ image
-2. TEI → _IIIF_ image
+## Linking text and image
+
+Let\'s link our TEI digital edition to a **IIIF** image
 
 ---
 
@@ -633,9 +643,7 @@ to a whole IIIF JSON **manifest** (metadata about collection of all images of a 
 Linking \<pb/\>
 to a **canvas** JSON:
 
-```
-<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json" n="218r"/>
-```
+`<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json" n="218r"/>`
 
 --
 
@@ -645,9 +653,7 @@ to a **canvas** JSON:
 Linking \<pb/\>
 to an **image** JSON:
 
-```
-<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json" n="218r"/>
-```
+`<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json" n="218r"/>`
 
 --
 
@@ -657,9 +663,7 @@ to an **image** JSON:
 Linking \<pb/\>
 to a **image file** (full image):
 
-```
-<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default.jpg" n="218r"/>
-```
+`<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default.jpg" n="218r"/>`
 
 ---
 
@@ -667,13 +671,9 @@ to a **image file** (full image):
 ### Line
 
 Linking \<lb/\>
-to a **region** of an image file.
+to a **region** of an image file, first line of the rubric (*Ci commence li livres du Grant Caam*...):
 
-First line of the rubric (*Ci commence li livres du Grant Caam*...):
-
-```
-<lb n="218r.1" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default"/>
-```
+`<lb n="218r.1" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default"/>`
 
 --
 
@@ -682,20 +682,20 @@ First line of the rubric (*Ci commence li livres du Grant Caam*...):
 
 ...second line of the rubric (*et deſ tartars et dŷnde*...):
 
-```
-<lb n="218r.2" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/530,3670,2400,140/full/0/default"/>
-```
+`<lb n="218r.2" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/530,3670,2400,140/full/0/default"/>`
 
 ---
 
 ## TEI → IIIF image
 ### Graphic element
 
+```
 <figure>
     <head>View of Venice</head>
     <figDesc>Illumination: view of the city of Venice</figDesc>
     <graphic url="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/510,550,3580,3200/full/0/default"/>
 </figure>
+```
 
 ---
 
