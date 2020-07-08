@@ -84,18 +84,35 @@ Let\'s link our TEI digital edition to a **local** image
 ## TEI → Local image
 ### Visualization
 
-EVT - Edition Visualization Technology
+
+<a href="http://evt.labcd.unipi.it/"  target="_blank">EVT - Edition Visualization Technology</a>
 
 <img src="assets/iiif2020/img/EVT1.png" alt="EVT" height="250"/>
-
-<a href="http://evt.labcd.unipi.it/"  target="_blank">http://evt.labcd.unipi.it/</a>
 
 --
 
 ## TEI → Local image
 ### Visualization
 
-We don't have time here to install and configure EVT.
+<a href="https://oxgarage.tei-c.org/#" target="_blank">OxGarage</a> / XSLT transformation
+
+<img src="assets/iiif2020/img/oxgarage.png" alt="OxGarage visualization" style="border:1px solid gray" height="250"/>
+
+--
+
+## TEI → Local image
+### Visualization
+
+<a href="https://oxgarage.tei-c.org/#" target="_blank">OxGarage</a> / XSLT transformation
+
+<img src="assets/iiif2020/img/oxgarage3.png" alt="OxGarage visualization" style="border:1px solid gray" height="250"/>
+
+--
+
+## TEI → Local image
+### Visualization
+
+Unfortunately we won't have time here to install and configure EVT.
 
 Let\'s use <a href="https://oxgarage.tei-c.org/#" target="_blank">OxGarage</a> instead to convert TEI XML to HTML.
 
@@ -169,7 +186,7 @@ Instructions:
 
 Images stay on their server
 <br/>
-(e.g. the Ambrosiana Library)
+(e.g. the Bodleian Library)
 
 and may be integrated
 <br/>
@@ -630,6 +647,15 @@ Let\'s link our TEI digital edition to a **IIIF** image
 ## TEI → IIIF image
 ### Manifest
 
+<img src="https://ronallo.com/iiif-workshop/assets/images/presentation-chart-manifest.png" height="300" alt="Canvas"/>
+
+Source: Jason Ronallo, <a href="https://ronallo.com/iiif-workshop/presentation/shared-canvas.html" target="_blank">Workshop: Shared Canvas</a>
+
+--
+
+## TEI → IIIF image
+### Manifest
+
 Linking \<msDesc/\> (MS description, in the TEI header)
 to a whole IIIF JSON **manifest** (metadata about collection of all images of a MS):
 
@@ -640,8 +666,15 @@ to a whole IIIF JSON **manifest** (metadata about collection of all images of a 
 ## TEI → IIIF image
 ### Page
 
+<img src="assets/iiif2020/img/EVT1.png" alt="EVT" height="400"/>
+
+--
+
+## TEI → IIIF image
+### Page
+
 Linking \<pb/\>
-to a **canvas** JSON:
+to a **canvas JSON** (metadata):
 
 `<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json" n="218r"/>`
 
@@ -651,7 +684,8 @@ to a **canvas** JSON:
 ### Page
 
 Linking \<pb/\>
-to an **image** JSON:
+to an **image JSON**<br/>
+(metadata, note **info.json** at the end)
 
 `<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json" n="218r"/>`
 
@@ -661,11 +695,22 @@ to an **image** JSON:
 ### Page
 
 Linking \<pb/\>
-to a **image file** (full image):
+to an **actual image**<br/>
+(note **full/full/0/default** at the end)
 
-`<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default.jpg" n="218r"/>`
+`<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default" n="218r"/>`
 
 ---
+
+## TEI → IIIF image
+### Line
+
+Cropped region:
+<a href="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**500,3550,3000,140**/full/0/default</a>
+
+![Cropped 1st line](assets/iiif2020/img/1st_line.jpeg)
+
+--
 
 ## TEI → IIIF image
 ### Line
@@ -687,7 +732,14 @@ to a **region** of an image file, first line of the rubric (*Ci commence li livr
 ---
 
 ## TEI → IIIF image
-### Graphic element
+### Figure
+
+<img src="assets/iiif2020/img/figure.jpeg" alt="Figure" height="400px"/>
+
+--
+
+## TEI → IIIF image
+### Figure
 
 ```
 <figure>
@@ -699,7 +751,7 @@ to a **region** of an image file, first line of the rubric (*Ci commence li livr
 
 ---
 
-## Exercise
+## Final exercise
 
 Find the IIIF URL for the 2nd page of the MS (218v) in the IIIF JSON metadata files (starting from the manifest) and connect it to &lt;pb n="218v"/&gt; in the TEI XML code of your digital edition. Instructions:
 
@@ -734,7 +786,7 @@ Find the IIIF URL for the 2nd page of the MS (218v) in the IIIF JSON metadata fi
 
 --
 
-6. _Solution_: you should have just clicked on
+8. _Solution_: you should have just clicked on
 <a href="https://iiif.bodleian.ox.ac.uk/iiif/image/497d8383-1580-419b-91bf-20452f3fdbe9/info.json" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/image/497d8383-1580-419b-91bf-20452f3fdbe9/info.json</a>
 	- (if not, just click on the link above)
 	- _Hint_: The photo should show a MS page starting with _dout ſans_
@@ -744,17 +796,17 @@ Find the IIIF URL for the 2nd page of the MS (218v) in the IIIF JSON metadata fi
 
 --
 
-7. Edit the URI
+9. Edit the URI
 <a href="https://iiif.bodleian.ox.ac.uk/iiif/annotation/497d8383-1580-419b-91bf-20452f3fdbe9.json" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/annotation/497d8383-1580-419b-91bf-20452f3fdbe9.json</a>
 directly in your browser's address bar
 so that you get the **image file** URI
 	- _Hint_: remove `.json` and replace it with `/full/full/0/default`
-8. Once you have the new URI, hit 'enter' in the address bar of your browser to view the image
+10. Once you have the new URI, hit 'enter' in the address bar of your browser to view the image
 	- _What's this?_  It's the URI of the actual **image** data. Great job!
 
 --
 
-10. Locate the &lt;pb&gt; element for page 218v in your digital edition's TEI XML
+11. Locate the &lt;pb&gt; element for page 218v in your digital edition's TEI XML
 	- _Hint_: it's around line 101. Find this in your code:
 
 <div style="text-align: left; font-size: 60%; margin-left: 10em">
@@ -772,17 +824,17 @@ so that you get the **image file** URI
 
 --
 
-9. Copy/paste the image URI as value of a @facs attribute in a &lt;pb&gt; element in your 
+12. Copy/paste the image URI as value of a @facs attribute in a &lt;pb&gt; element in your 
 	- _Hint_: the result should look like `<pb facs="https://iiif.bodleian.ox.ac.uk/bla-bla-bla/full/full/0/default" n="218v"/>`
 	- Go to next slide ↓ for the solution
 
 --
 
-10. _Solution_: `<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/497d8383-1580-419b-91bf-20452f3fdbe9/full/full/0/default" n="218v"/>`
+13. _Solution_: `<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/497d8383-1580-419b-91bf-20452f3fdbe9/full/full/0/default" n="218v"/>`
 
 --
 
-11. Hurray! Victory is ours!
+14. Hurray! Victory is ours!
 
 ![Victory](assets/iiif2020/img/victory.jpg)
 
