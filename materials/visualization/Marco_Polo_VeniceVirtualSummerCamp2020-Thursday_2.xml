@@ -128,7 +128,7 @@
                     <graphic url="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/510,550,3580,3200/full/0/default"/>
                 </figure>
                 <head rend="rubricated">
-                    <lb n="218r.1" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default"/>Ci commence li liures du <persName ref="#GrandChan">graunt Caam</persName> qui parole de la <placeName ref="#Armenia">graunt Ermenie</placeName>
+                    <lb n="1" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default"/>Ci commence li liures du <persName ref="#GrandChan">graunt Caam</persName> qui parole de la <placeName ref="#Armenia">graunt Ermenie</placeName>
                     de <placeName ref="#Persia">persse</placeName>. 
                     <lb n="2"/>et des <name>tartars</name> et d'<placeName>Ynde</placeName>. Et des
                     granz merueille qui p<ex>er</ex> le monde sont. </head>
