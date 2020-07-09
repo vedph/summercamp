@@ -12,7 +12,13 @@ title: Materials, slides & tools
   {% endif %}
 {% endfor %}
 
-<!--h2>Strand #2 - Digital and Public History</h2>-->
+<h2>Strand #2 - Digital and Public History</h2>
+
+{% for p in site.pages reversed %}
+  {% if p.subcategory == "materials strand2" %}
+    {% include card.html %}
+  {% endif %}
+{% endfor %}
 
 <h2>Strand #3 - Digital and Public Art History</h2>
 
