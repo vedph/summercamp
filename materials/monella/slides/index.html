@@ -58,8 +58,8 @@ Let\'s link our TEI digital edition to a **local** image
 ## TEI → Local image
 ### Encoding
 
-1. Download image [218r.jpg](assets/iiif2020/img/218r.jpg) to your local folder (the same in which you have your TEI XML file)
-2. Write this in your TEI code:
+1. Local image [218r.jpg](assets/iiif2020/img/218r.jpg) is in the same folder in which you have your TEI XML file
+2. TEI code:
 
 `<pb facs="218r.jpg" n="218r"/>`
 
@@ -68,11 +68,12 @@ Let\'s link our TEI digital edition to a **local** image
 ## TEI → Local image
 ### Encoding
 
-1. Do the same for the second page
-1. Download image [218v.jpg](assets/iiif2020/img/218v.jpg) to your local folder (the same in which you have your TEI XML file)
-2. Write this in your TEI code:
+Alternatively: 
 
-`<pb facs="218v.jpg" n="218v"/>`
+1. Local image [218r.jpg](assets/iiif2020/img/218r.jpg) is in an `images` subfolder
+2. TEI code:
+
+`<pb facs="images/218r.jpg" n="218r"/>`
 
 ---
 
@@ -106,66 +107,6 @@ Let\'s link our TEI digital edition to a **local** image
 <a href="https://oxgarage.tei-c.org/#" target="_blank">OxGarage</a> / XSLT transformation
 
 <img src="assets/iiif2020/img/oxgarage3.png" alt="OxGarage visualization" style="border:1px solid gray" height="250"/>
-
---
-
-## TEI → Local image
-### Visualization
-
-Unfortunately we won't have time here to install and configure EVT.
-
-Let\'s use <a href="https://oxgarage.tei-c.org/#" target="_blank">OxGarage</a> instead to convert TEI XML to HTML.
-
-Instructions:
-
-↓
-
---
-
-1. Go to <a href="https://oxgarage.tei-c.org/#" target="_blank">OxGarage</a>
-
-![OxGarage](assets/iiif2020/img/ox00.png)
-
---
-
-2. Left: Convert from → Documents → TEI P5 XML Document
-
---
-
-![Convert from](assets/iiif2020/img/ox01.png)
-
---
-
-![Convert from](assets/iiif2020/img/ox02.png)
-
---
-
-3. Right: Convert to → xHTML
-
---
-
-![Convert to](assets/iiif2020/img/ox03.png)
-
---
-
-4. Left: Select file to convert → Button *Browse* →
-    select and upload your TEI XML file
-5. Right: Upload images → Button *Browse* → select and
-    upload the image with the manuscript page facsimile
-    [218r.jpg](assets/iiif2020/img/218r.jpg)
-
---
-
-![Browse](assets/iiif2020/img/ox04.png)
-
---
-
-6. Bottom, center: click on button *Convert*
-7. In a few seconds, a download dialog window appears → click
-    *Save* to save the output HTML file
-8. Open the downloaded HTML file to see the result:
-    double click; your default browser will open it;
-    `[Page 218r]` should now be a link to the image file
 
 ---
 
@@ -226,44 +167,6 @@ Bodleian Library MS. Bodl. 264: _Mirador Viewer_
 
 ---
 
-## Canvas ← Image(s)
-
-E.g.: a MS page
-
-<img src="https://ronallo.com/iiif-workshop/assets/images/presentation-shared-canvas.png" height="300" alt="Canvas"/>
-
-Source: Jason Ronallo, <a href="https://ronallo.com/iiif-workshop/presentation/shared-canvas.html" target="_blank">Workshop: Shared Canvas</a>
-
---
-
-## Canvas ← Image(s)
-
-- One canvas may include many images, e.g.:
-    - new photos of same MS
-    - new photos taken after MS restoration
-    - advanced imaging (multi-spectral imaging, X-Ray, CT-scan etc.)
---
-
-## Canvas ← Image(s)
-
-E.g.: a MS page
-
-<img src="https://ronallo.com/iiif-workshop/assets/images/presentation-shared-canvas-annotation.png" height="300" alt="Canvas"/>
-
-Source: Jason Ronallo, <a href="https://ronallo.com/iiif-workshop/presentation/shared-canvas.html" target="_blank">Workshop: Shared Canvas</a>
-
----
-
-## Collection
-
-E.g.: a whole MS
-
-<img src="https://ronallo.com/iiif-workshop/assets/images/presentation-chart-manifest.png" height="300" alt="Canvas"/>
-
-Source: Jason Ronallo, <a href="https://ronallo.com/iiif-workshop/presentation/shared-canvas.html" target="_blank">Workshop: Shared Canvas</a>
-
----
-
 ## IIIF for philologists
 
 <table>
@@ -293,6 +196,25 @@ Source: Jason Ronallo, <a href="https://ronallo.com/iiif-workshop/presentation/s
 </tr>
 
 </table>
+
+Source: J. Ronallo, <a href="https://ronallo.com/iiif-workshop/presentation/shared-canvas.html" target="_blank">Workshop: Shared Canvas</a>
+--
+
+## Canvas ← Image(s)
+
+- One canvas may include many images, e.g.:
+    - new photos of same MS
+    - new photos taken after MS restoration
+    - advanced imaging (multi-spectral imaging, X-Ray, CT-scan etc.)
+--
+
+## Canvas ← Annotation(s)
+
+Canvases may include images and other "annotations"
+
+<img src="https://ronallo.com/iiif-workshop/assets/images/presentation-shared-canvas-annotation.png" height="300" alt="Canvas"/>
+
+Source: Jason Ronallo, <a href="https://ronallo.com/iiif-workshop/presentation/shared-canvas.html" target="_blank">Workshop: Shared Canvas</a>
 
 ---
 
@@ -743,11 +665,97 @@ to a **region** of an image file, first line of the rubric (*Ci commence li livr
 
 ```
 <figure>
-    <head>View of Venice</head>
     <figDesc>Illumination: view of the city of Venice</figDesc>
     <graphic url="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/510,550,3580,3200/full/0/default"/>
 </figure>
 ```
+
+---
+
+## Exercise 1: TEI → Local image
+### Encoding
+
+Instructions:
+
+↓
+
+--
+
+1. Download image [218r.jpg](assets/iiif2020/img/218r.jpg) to your local folder (the same in which you have your TEI XML file)
+2. Write this in your TEI code:
+
+`<pb facs="218r.jpg" n="218r"/>`
+
+--
+
+3. If you have extra time, do the same for the second page
+4. Download image [218v.jpg](assets/iiif2020/img/218v.jpg) to your local folder (the same in which you have your TEI XML file)
+5. Write this in your TEI code:
+
+`<pb facs="218v.jpg" n="218v"/>`
+
+---
+
+## Exercise 2: TEI → Local image
+### Visualization
+
+Instructions:
+
+↓
+
+--
+
+Let\'s use <a href="https://oxgarage.tei-c.org/#" target="_blank">OxGarage</a> to convert our TEI XML to an HTML file looking like this:
+
+<img src="assets/iiif2020/img/oxgarage3.png" alt="OxGarage visualization" style="border:1px solid gray" height="250"/>
+
+--
+
+1. Go to <a href="https://oxgarage.tei-c.org/#" target="_blank">OxGarage</a>
+
+![OxGarage](assets/iiif2020/img/ox00.png)
+
+--
+
+2. Left: Convert from → Documents → TEI P5 XML Document
+
+--
+
+![Convert from](assets/iiif2020/img/ox01.png)
+
+--
+
+![Convert from](assets/iiif2020/img/ox02.png)
+
+--
+
+3. Right: Convert to → xHTML
+
+--
+
+![Convert to](assets/iiif2020/img/ox03.png)
+
+--
+
+4. Left: Select file to convert → Button *Browse* →
+    select and upload your TEI XML file
+5. Right: Upload images → Button *Browse* → select and
+    upload the image with the manuscript page facsimile
+    [218r.jpg](assets/iiif2020/img/218r.jpg)
+
+--
+
+![Browse](assets/iiif2020/img/ox04.png)
+
+--
+
+6. Bottom, center: click on button *Convert*
+7. In a few seconds, a download dialog window appears → click
+    *Save* to save the output HTML file
+8. Open the downloaded HTML file to see the result:
+    double click; your default browser will open it;
+    `[Page 218r]` should now be a link to the image file
+
 
 ---
 
