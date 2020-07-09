@@ -1,0 +1,198 @@
+Marco Sartor
+14:55
+Hi everybody!
+Tu
+14:55
+@Carmina_Banana
+Marco Sartor
+14:57
+Yes
+Tu
+15:03
+Materials: https://vedph.github.io/summercamp/materials/monella/
+
+Slides: https://vedph.github.io/summercamp/materials/monella/slides/index.html#/
+Valeria Vanesio
+15:05
+yes
+Tu
+15:11
+https://vedph.github.io/summercamp/materials/monella/slides/index.html#/9
+Daniele FUSI
+15:12
+direct link: https://iiif.bodleian.ox.ac.uk/iiif/mirador/2d7945ce-b71e-41c6-ad1f-8af6b92f020f
+Sara Ayres
+15:12
+pages of the ms
+Tu
+15:15
+https://vedph.github.io/summercamp/materials/monella/slides/index.html#/11/1
+Tu
+15:20
+https://vedph.github.io/summercamp/materials/monella/slides/index.html#/12
+Carmen García
+15:21
+you get a section of the image!
+Tu
+15:21
+Instead of thr first 'full', write 2000,2000,2000,2000
+Giuditta Cirnigliaro
+15:21
+I get a detail of the image
+Carmen García
+15:21
+coordinates?
+Valeria Vanesio
+15:21
+You can focus on a detal
+Chloé Tardivel
+15:22
+yes detail
+Valeria Vanesio
+15:22
+Yes, detail sorry :-)
+Carmen García
+15:25
+And the Vatican?
+Yes
+Gaia Tomazzoli
+15:33
+thank you!
+Valeria Vanesio
+15:33
+Thank you!!!
+Silvia Gazzoli
+15:33
+thank you!
+Michele Sollecito
+15:33
+thank you!
+Janyce Desiderio
+15:33
+thank you!
+Chloé Tardivel
+15:33
+thank you, all clear !!!
+Carmen García
+15:33
+Thank you, Paolo. Very interesting
+Sara Ayres
+15:33
+thank you!
+Marco Sartor
+15:33
+Thank you very much!
+Valeria Melis
+15:33
+Very interesting! Thank you, Paolo!
+Mila Fumini
+15:33
+Thank You
+Giulia FABBRIS
+15:33
+Thank you, so interesting!
+Y. Faghihi
+15:33
+Thank you, very enlightening!
+Janyce Desiderio
+15:33
+Small question: How do you find the coordinates?
+Ah yes same!
+Daria Spampinato
+15:34
+thanks!
+Daria Vasyutinsky Shapira
+15:34
+Thank you!
+Gaia Tomazzoli
+15:34
+yes! I wanted to know the same
+Tu
+15:34
+https://vedph.github.io/summercamp/materials/monella/slides/index.html#/30
+Gaia Tomazzoli
+15:35
+yes! I've used Tiziana's tool for the Documenti d'amore
+https://tmancinelli.github.io/documentidamore/
+Giuditta Cirnigliaro
+15:36
+I recently learned how to create IIIF manifests with my own images and already existing institutional IIIF images and I am eager to continue to experiment with IIIF. -	My main problem is that most institutions which own the manuscripts related to my digital edition project are not using IIIF: I started to employ static images with the hope to get in the future institutional IIIF files of my project manuscripts (which I am not sure will ever exist), but I am not sure if it makes sense...
+Tu
+15:36
+Yes, right, she developed that tool for the Documenti d'Amore project in the BIFLOW ERC
+Giuditta Cirnigliaro
+15:36
+Also, at the moment I have a TEI file with my transcriptions and some IIIF manifests with my annotations: is it reasonable, to integrate them? If I do as you explained earlier, I should link any single IIF ‘default’ image to my edition, not all of the at once, right? In the end I feel I don’t get a lot more than by using my local image. Can you tell a bit about how to integrate annotations, then?
+Gaia Tomazzoli
+15:36
+(hope she won't kill me)
+Tu
+15:38
+Open SeaDragon
+Giuditta Cirnigliaro
+15:38
+Thank you so much!!
+maia ninidze
+15:38
+Very interesting. Thank you!
+Tu
+15:38
+Roberto Roselli Del Turco, EVT project, also working with Angelo Mario Del Grosso (visiting at VeDPH in Venice)
+Jeffrey Witt (LombardPress)
+Tu
+15:40
+Daniele Fusi, https://github.com/vedph/
+"Cadmus" is the name of the system Daniele is developing... another VeDPH scholar -)
+:-)
+Valentina MIGNOSA
+15:40
+Would be possible to have the document of our chat of this afternoon?
+Tu
+15:40
+@Linda, are you are going to save this chat?
+VeDPH - unive
+15:41
+ok
+Valentina MIGNOSA
+15:41
+Thanks!
+Gaia Tomazzoli
+15:42
+a recent project that is trying to use IIIF and especially to push libraries to adopt IIIF is Illuminated Dante Project
+http://www.dante.unina.it/public/frontend
+Tu
+15:43
+Thank you Gaia!
+Gaia Tomazzoli
+15:43
+devoted to illuminated manuscripts of Dante's Commedia
+Tu
+15:43
+Yes, definitely IIIF is not only for MS page images: it's also for drawings in museums etc.
+Beth Fischer
+15:45
+On the museum side (less archive/library), some central database management tools are starting to create IIIF manifests as part of their services. Since many smaller institutions don't have custom tools, this will make it much more possible for them. Typically the digital resources delivery is not handled in-house.  TMS is one such org that is just implementing IIIF.
+Carmen García
+15:47
+The Spanish National Library is now allowing the use of its images for any purpose without paying. They have been a great work and effort for digitizing lots of items, but they have not considered, it seems, the IIIF protocol
+Sophie Große
+15:47
+Thanks so much for this interesting presentation!
+Valentina MIGNOSA
+15:48
+Thank you!
+Carmen García
+15:48
+see you tomorrow!
+Tu
+15:48
+Probably, if we philologists start massively integrating IIIF into our digital editions, we help libraries to show the funding bodies the utility of IIIF
+Carmen García
+15:48
+thank you !
+A Britton
+15:48
+thank you
+Bernie Ogden
+15:48
+Thank you
