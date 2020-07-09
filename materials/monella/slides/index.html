@@ -75,6 +75,16 @@ Alternatively:
 
 `<pb facs="images/218r.jpg" n="218r"/>`
 
+--
+
+## TEI → Online image (WWW)
+### Encoding
+
+1. Image [218r.jpg](assets/iiif2020/img/218r.jpg) is in a Website
+2. TEI code:
+
+`<pb facs="https://vedph.github.io/summercamp/materials/monella/slides/assets/iiif2020/img/218r.jpg" n="218r"/>`
+
 ---
 
 ## TEI → Local image
@@ -223,31 +233,6 @@ Source: Jason Ronallo, <a href="https://ronallo.com/iiif-workshop/presentation/s
 --
 
 ## JSON metadata files
-### Manifest
-
-- _Collection_ of MS photos
-- <a href="https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json"  target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json</a>
-    - `sequences/0/canvases/26/@id` ↓
-
---
-
-## JSON metadata files
-### Canvas JSON file
-
-- _Canvas_: a MS page
-- <a href="https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json</a>
-    - `images/0/resource/@id` ↓:
-
---
-
-## JSON metadata files
-### Image JSON file
-
-- <a href="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**info.json**</a>
-
---
-
-## JSON metadata files
 
 - Manifest: <a href="https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json</a>
 - Canvas: <a href="https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/**canvas**/699adfb3-a5da-4b09-9759-41eee3713bc3.json</a>
@@ -307,7 +292,7 @@ Full image:
 Cropped region:
 <a href="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**500,3550,3000,140**/full/0/default</a>
 
-![Cropped 1st line](assets/iiif2020/img/1st_line.jpeg)
+![Cropped first line](assets/iiif2020/img/1st_line.jpeg)
 
 --
 
@@ -630,7 +615,7 @@ to an **actual image**<br/>
 Cropped region:
 <a href="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**500,3550,3000,140**/full/0/default</a>
 
-![Cropped 1st line](assets/iiif2020/img/1st_line.jpeg)
+![Cropped first line](assets/iiif2020/img/1st_line.jpeg)
 
 --
 
@@ -640,7 +625,7 @@ Cropped region:
 Linking \<lb/\>
 to a **region** of an image file, first line of the rubric (*Ci commence li livres du Grant Caam*...):
 
-`<lb n="218r.1" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default"/>`
+`<lb n="1" facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default"/>`
 
 --
 
@@ -759,9 +744,93 @@ Let\'s use <a href="https://oxgarage.tei-c.org/#" target="_blank">OxGarage</a> t
 
 ---
 
-## Final exercise
+## Exercise 3: JSON
 
-Find the IIIF URL for the 2nd page of the MS (218v) in the IIIF JSON metadata files (starting from the manifest) and connect it to &lt;pb n="218v"/&gt; in the TEI XML code of your digital edition. Instructions:
+Open and browse IIIF JSON metadata files for page 218r; find the correct IIIF URLs for the manifest, the canvas JSON, the image JSON and the image file
+
+Instructions:
+
+↓
+
+--
+
+## JSON metadata files
+### Manifest
+
+1. Open <a href="https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json"  target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/manifest/ae9f6cca-ae5c-4149-8fe4-95e6eca1f73c.json</a>
+	- A new JSON file opens up
+	- _What's this?_ The **manifest** of the **collection** of photos of our MS
+
+--
+
+2. Click on triangles, browse to `sequences/0/canvases/26/@id`
+3. Click on the URI of that `@id`, i.e.
+<a href="https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/canvas/699adfb3-a5da-4b09-9759-41eee3713bc3.json</a>
+	- A new JSON file opens up
+	- _What's this?_ The JSON file with metadata of the **canvas** of MS page 218r
+
+--
+
+4. Click on triangles, browse to `images/0/resource/@id`
+5. Click on the URI in that `@id`, i.e.
+<a href="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/**info.json**</a>
+	- A new JSON file opens up
+	- _What's this?_ The JSON file with metadata of the **image** of MS page 218r
+--
+
+6. Edit the URI
+<a href="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json" target="_blank">https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/info.json</a>
+directly in your browser's address bar
+so that you get the **image file** URI
+	- _Hint_: remove `.json` and replace it with `/full/full/0/default`
+10. Once you have the new URI, hit 'enter' in the address bar of your browser to view the image
+	- _What's this?_  It's the URI of the actual **image** data. Great job!
+
+--
+
+11. Hurray! Victory is ours!
+
+![Victory](assets/iiif2020/img/victory.jpg)
+
+---
+
+## Exercise 4: TEI → IIIF image
+
+Edit the TEI XML code of your digital edition to insert the IIIF URIs we have seen in the lecture. Instructions:
+
+↓
+
+--
+ 
+1. Locate the first **page** in your edition, i.e. element `<pb n="218r"/>`, and edit it like this:
+
+`<pb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/full/full/0/default" n="218r"/>`
+
+--
+
+2. Locate the first **line** of that page in your edition, i.e. element `<lb n="1"/>` after `<pb n="218r"/>`, and edit it like this:
+
+`<lb facs="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/500,3550,3000,140/full/0/default" n="1"/>`
+
+--
+
+3. Between `<pb n="218r"/>` and `<lb n="1"/>`, insert this **figure**:
+
+```
+<figure>
+    <figDesc>Illumination: view of the city of Venice</figDesc>
+    <graphic url="https://iiif.bodleian.ox.ac.uk/iiif/image/699adfb3-a5da-4b09-9759-41eee3713bc3/510,550,3580,3200/full/0/default"/>
+</figure>
+```
+
+---
+
+## Exercise 5: TEI → IIIF image
+### Homework
+
+Feel free to [email me](https://www1.unipa.it/paolo.monella/indice/index.html) if you encounter any issues.
+
+Find the IIIF URL for the 2<sup>nd</sup> page of the MS (218v) in the IIIF JSON metadata files (starting from the manifest) and connect it to &lt;pb n="218v"/&gt; in the TEI XML code of your digital edition. Instructions:
 
 ↓
 
