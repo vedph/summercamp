@@ -1,0 +1,322 @@
+Maria Akritidou
+11:03
+Great, thank you for opening up the session!
+Sophie Große
+11:03
+That's great, thanks!
+Tu
+11:04
+https://vedph.github.io/summercamp/
+https://vedph.github.io/summercamp/materials/visualisation/
+Our materials: https://vedph.github.io/summercamp/materials/visualisation/
+Tu
+11:17
+Slides are in https://vedph.github.io/summercamp/materials/visualisation/Xslt_short.pptx
+Tu
+11:19
+XML <num>15</num>
+
+is transformed into
+
+HTML <span class="nr">15</span>
+Then CSS says: all HTML <span> elements that have class="nr" must be shown in red
+Tu
+11:20
+This can be achieved by means of many programming languages (I mostly use JavaScript or Python), but XSLT has been created specificall for that task
+Daniele FUSI
+11:20
+As a general comment: from XML to HTML we are actually losing information. It's a presentational layer: many things get the same appearance. E.g. a person name or a place name can both just become italic; and italic it's just that: italic. Representation is much richer and for XML we have several dialects for each specific conceptual domain.
+Tu
+11:25
+All materials
+...including the final XML to use
+are in https://vedph.github.io/summercamp/materials/visualisation/
+Please go there and download all materials
+Direct link to the GItHub folder with the materials: https://github.com/vedph/event_materials/tree/master/2020_summer_camp/strand_1_text/visualisation
+please download all files in the github folder
+Tu
+11:26
+transform.xpr
+VeDPH - unive
+11:26
+if you want to preserve as much information as possible in a transformation, you must re-arrange the information; for exmaple, the name of an XML tag can become the class of a HTML tag: XML-TEI <persName><forename>Federico</forename></persName> becomes, in HTML, <span class="persName"><span class="forename">Federico</span></span>
+Gaia Tomazzoli
+11:26
+I never get how to download files from github
+Valentina MIGNOSA
+11:27
+me too
+Tu
+11:27
+1) Download everything in https://github.com/vedph/event_materials/tree/master/2020_summer_camp/strand_1_text/visualisation
+2) open with double click on transform.xpr
+Chloé Tardivel
+11:27
+me too
+Gaia Tomazzoli
+11:27
+ok, it's on google drive
+but since we're here
+Janyce Desiderio
+11:28
+I'm not sure you can download from github if you don't have an account
+Gaia Tomazzoli
+11:28
+would it be possible to explain how to download from github?
+Janyce Desiderio
+11:28
+(it's not a sure affirmation ...)
+VeDPH - unive
+11:28
+if you just transform <persName><forename>Federico</forename></persName> in <span><span>Federico</span></span> you lose information
+Sara Ayres
+11:28
+If I may ask Tiziana, how much time should you add to a transcription and translation project of 15,000 words for coding? 
+Daniele FUSI
+11:28
+#All: ensure to download ALL the files, and put them in the SAME folder. The resulting HTML has some dependencies (CSS and JS), which are to be found in the same directory.
+Janyce Desiderio
+11:29
+(otherwise you clone the repository)
+Tu
+11:29
+OK done
+Now it's a zip file
+step by step:
+1) go to https://github.com/vedph/event_materials/tree/master/2020_summer_camp/strand_1_text/visualisation
+2) right click → download as / save as
+3) unzip it 
+VeDPH - unive
+11:30
+Two documents are isomorphic if exists a transfromation from A to B and a reverse transforamtion form B to A, without loss of information.
+Tu
+11:30
+4) click on transform.xpr
+Tu
+11:31
+If you have tech issues, join me in https://8x8.vc/paolomonella/paolo.monella for personal tutoring
+Chloé Tardivel
+11:32
+all clear thanks !
+Tu
+11:34
+If you don't have 'save as', do 'save link' from GitHub
+Valentina MIGNOSA
+11:34
+yes
+Chloé Tardivel
+11:34
+yes
+Christian D'Agata
+11:34
+yes
+Janyce Desiderio
+11:34
+yes
+Michele Sollecito
+11:34
+yes
+Silvia Gazzoli
+11:34
+yes
+Y. Faghihi
+11:38
+Could you just show the next step as well..again 
+Valentina MIGNOSA
+11:38
+do we have to select 'Transformation options'?
+Y. Faghihi
+11:38
+I mean the visualisation
+Daniele FUSI
+11:38
+Open the XML and then pick Document/Transformation/Configure Transformation Scenario just click apply no option required
+Tu
+11:38
+I added a sub-folder in the github with the same files unzipped, just in case you have issues with the ZIP file https://github.com/vedph/event_materials/tree/master/2020_summer_camp/strand_1_text/visualisation
+Daniele FUSI
+11:39
+BTW The warning appearing after applying is a developer's commodity to make sure he did not forget to match some tags from the TEI document by mistake. "Forgetting" a text node here is OK, because a text node is copied by default as it is.
+Gaia Tomazzoli
+11:40
+didn't they cancel the Redentore?
+maybe just the fireworks?
+we don't hear it
+Sara Ayres
+11:43
+is it possible to have two IIF images from different sources on the same page, to facilitate comparison? 
+Yes in the presentation :-)
+Alberto Campagnolo
+11:44
+https://projectmirador.org/demo/
+Sara Ayres
+11:45
+Thanks for this link!
+Daniele FUSI
+11:45
+Also but take into account that a web presentation targets multiple devices and usually this means we must be prepared to face dramatically different screen sizes. There are ways to provide different CSS rules for different media anyway, that's called responsivity.
+Valentina MIGNOSA
+11:46
+I have a very specific question about the semantic web. let's assume that I have a database of inscriptions formed by single epigraphic records and that in these cards there are drop-down menus with standardized items (e.g. supports: vase, stele, etc.). Can I use what Professor Mancinelli showed us to insert my entries with reference to other entries on the web?
+Tu
+11:46
+Alberto's answer pertains to an individual wanting to see two images vis-a-vis; my answer pertains to the webpage of your scholarly digital edition linking text & image
+Franz FISCHER
+11:48
+Human-Computer Interaction
+https://mappingmanuscriptmigrations.org/en/
+(sorry, first post was wrong)
+Franz FISCHER
+11:49
+https://mapping-manuscript-migrations.github.io/mapping-manuscript-migrations.github.io/data_model/mmm.html
+Tiziana MANCINELLI
+11:51
+https://tmancinelli.github.io/biflow_website/
+maia ninidze
+11:52
+Not a question but a request. I want to thank you all for very interesting sessions. I see that if I had some basic knowledge I could study more. I want to ask you if it is possible to invite you personally to participate in some Georgian projects either face-to-face or online. As there are no specialists of Digital Textual scholarship in our country. 
+Sara Ayres
+11:53
+How much time should you add to a project for coding?  I guess this is a little bit like asking how long is a piece of string... :-/
+Tu
+11:55
+@Valentina, you might paste here your question again
+Valentina MIGNOSA
+11:57
+ I have a very specific question about the semantic web. let's assume that I have a database of inscriptions formed by single epigraphic records and that in these cards there are drop-down menus with standardized items (e.g. supports: vase, stele, etc.). Can I use what Professor Mancinelli showed us to insert my entries with reference to other entries on the web?
+thank you!
+Sara Ayres
+11:58
+Thank you!
+Tiziana MANCINELLI
+12:06
+Reuse and open source are really good points
+Tu
+12:08
+Rem tene, verba sequentur!
+Daniele FUSI
+12:09
+(Cato the Elder)
+Valeria Vanesio
+12:13
+Yes, right
+Tiziana MANCINELLI
+12:13
+@valentina  Mignosa - if you have a db you can expose data in LOD 
+Carmen García
+12:15
+I complete agree with Paolo. My introduction to Python in a Digital Humanities Master in Madrid was taught by computer engineers and all our exercises were about building cash machines and a lot of Maths thing. We didn't see anything of data mining, which was the important use for us of this technology. A change of mind is necessary. As Paolo said, you can teach how it works without mentioning numbers. Fortunately, not all the subjects on the topic are like this ;)
+Tu
+12:19
+AIUCD - Associazione per l'Informatica Umanistica e la Cultura Digitale http://www.aiucd.it/
+Daniel Kiss
+12:20
+Who educates the educators?
+Tu
+12:20
+Yes @Carmen, the question that Tiziana is mentioning right now (who'll teach the teachers?) is key
+Carmen García
+12:21
+A similar question was asked some days ago on Twitter
+Silvia Gazzoli
+12:21
+(relating to the discussion about DH in italy)I think it depens on what you are going to work on. For example I'm working on ER db and without math (relational algebra maybe? i don't now the exact translation)  I could not completely comprehend queries' structures and how to obtain correct answers from my archive. 
+Tu
+12:21
+Also, I think it's important to bear in mind Tito Orlandi's point (and Guido Milanese's, and of other DHers) that "Informatica Umanistica" is a humanistic matter
+Ca' Coscari VeDPH new Master's Degree Programme in
+Digital and Public Humanities: https://www.unive.it/pag/38917/
+Daniele FUSI
+12:30
+Totally agrre. You don't have to be an engineer to drive a car, but having an idea about how an engine works may help; at least when the car stops in the middle of nothing :) That's an interdisciplinary team-work, just like today nobody is writing a dictionary on his own. Ars longa, vita brevis...
+Tiziana MANCINELLI
+12:30
+Totally agree
+Tu
+12:31
++1 -- T. Olrandi once used the same metaphor. He said that peopole in fact  do have a basic understanding of how an automobile motor works (burning fuel etc.), but often have no even basic understanding of IT -- It's a black box
+Sara Ayres
+12:33
+Thanks so much, really fascinating!
+Tiziana MANCINELLI
+12:33
+linda
+Sophie Große
+12:33
+Thank you so much for opening the discussion as well!
+Valeria Vanesio
+12:33
+I am really grateful to everyone for having been part of this course this week. It has been amazing and very informative especially for me. I was not so familiar with this, just in theory and not in practice, but it is essential both for my project and my work as an archivist. Thank you very much
+Mila Fumini
+12:33
+Linda is super!
+Tiziana MANCINELLI
+12:33
+Linda, thank you!!!
+Anne
+12:33
+thank you
+Daniel Kiss
+12:33
+Thank you very much for this course!
+Rostislav Tumanov
+12:34
+Thank you for this very informative courses!
+Christian D'Agata
+12:34
+Thank you for everything and I hope see you soon in Venice!
+Janyce Desiderio
+12:34
+Thanks so much to everybody, this was more than useful!
+Silvia Gazzoli
+12:34
+Thank you! 
+Gaia Tomazzoli
+12:34
+Thank you all, it was great
+Bernie Ogden
+12:34
+Thank you!
+Valentina MIGNOSA
+12:34
+thank you very much!
+Michele Sollecito
+12:34
+Thank you, see you later
+Marco Sartor
+12:34
+Thank you all! Very interesting and amazing opportunity! See you later for the closing keynote.
+Maria Akritidou
+12:34
+Thank you all!
+Y. Faghihi
+12:34
+Thank you!!! 
+Tu
+12:34
+15:00 -- Final keynote by F. Vitali. Video link in https://vedph.github.io/summercamp/videos
+Christian D'Agata
+12:34
+yeah!
+Giulia FABBRIS
+12:35
+This course was enlightening, thanks to all the Professors!
+Carmen García
+12:35
+Thank you! Very interesting presentations and discussion. See you later!
+Valeria Vanesio
+12:35
+See you!!!!!!
+Rostislav Tumanov
+12:35
+Thanky ou to everyone!
+Tu
+12:35
+Thank you all! 
+15:00 -- Final keynote by F. Vitali. Video link in https://vedph.github.io/summercamp/videos
+Valeria Melis
+12:35
+Thank you! See you later!
+Fiona Maguire
+12:35
+Thank you all for your splendid summer camp.
